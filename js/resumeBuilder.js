@@ -208,7 +208,7 @@ var data = "%data%";
 	education.display();
 
 
-// //internationalize name button
+//internationalize name button
 $("#main").append(internationalizeButton);
-// //google location map
-// $("#mapDiv").append(googleMap);
+//google location map
+$("#mapDiv").append(googleMap);
