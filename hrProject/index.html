@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Travel Companion</title>
+      <link rel="stylesheet" href="style.css">
+      <link href='https://fonts.googleapis.com/css?family=Lato:300,700' rel='stylesheet' type='text/css'>
+  </head>
+  <body>
+
+      <div class="header">
+        <h1 id="greeting" class="greeting">Where are you traveling to?</h1>
+        <h2>Enter your destination to get relevant information</h2>
+        <form>
+            <label for="street">Street: </label><input type="text" id="street" value="" placeholder="Enter street">
+            <label for="city">City: </label><input type="text" id="city" value=""placeholder="Enter city" name="city" required>
+            <label for="state">State: </label><input type="text" id="state" value="" placeholder="Enter state or country">
+            <button type="button" id="submit-btn">Submit</button>
+        </form>
+
+      </div>
+
+        <div class="content flex-container" id="mainContent">
+          <div class="flex1 container" id="nytimes-container">
+            <h3 id="nytimes-header">New York Times Articles</h3>
+            <ul id="nytimes-articles" class="article-list"></ul>
+          </div>
+
+          <div class="flex2 container" id="map"></div>
+
+          <div class="flex3 container">
+            <div class="flex-weather">
+              <h3>Current Weather</h3>
+              <div id="current"></div>
+              <div id="imgContainer"></div>
+            </div>
+
+            <div class="flex-wiki" id="wikipedia-container">
+              <h3 id="wikipedia-header">Wikipedia Links</h3>
+              <div class="ul-container">
+                <ul id="wikipedia-links"></ul>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

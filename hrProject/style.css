@@ -1,0 +1,236 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Lato', sans-serif;
+}
+
+body {
+  background-color: #DAD7C7;
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  margin: 0 auto;
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 25px;
+  background-color: #fff;
+}
+
+h1 {letter-spacing: 0.02em;}
+
+label {
+  margin: 0 10px;
+  font-style: italic;
+}
+input[type="text"] {
+  font-size: 20px;
+  padding: 10px;
+  border: solid 5px #c9c9c9;
+  transition: border 0.5s;
+}
+input[type="text"]:focus,
+input[type="text"].focus {
+  border: solid 5px #969696;
+}
+
+#submit-btn {
+  font-size: 20px;
+  font-weight: bold;
+  color: #fff;
+  border-radius: 5px;
+  background-color: rgba(66, 139, 202, 1);
+  padding: 13px 10px;
+  margin-left: 10px;
+}
+
+.greeting {
+  color: #000;
+  text-align: center;
+}
+
+h3 {
+  text-align: center;
+  color: #000;
+  background-color: rgba(227, 227, 227, 1);
+  margin-top: 0;
+  padding-top: .5em;
+  padding-bottom: .5em;
+}
+
+.flex-container {
+  -webkit-display: -webkit-box;
+  -webkit-display: -webkit-flex;
+  -moz-display: flex;
+  -ms-display: -ms-flexbox;
+  -o-display: flex;
+  display: -webkit-box;
+  display: flex;
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: all .50s;
+  transition: all .50s;
+  height: 650px;
+  background-size: cover;
+}
+
+.dataEntered.flex-container {
+  visibility: visible;
+  opacity: 1;
+}
+
+.flex1, .flex2, .flex3 {
+  height: 500px;
+  box-shadow: rgba(0, 0, 0, .5);
+  margin-top: 10px;
+  margin-right: 5px;
+  margin-left: 5px;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+.flex3 { background-color: rgba(0, 0, 0, 0); }
+
+.flex1, .flex3 { width: 30%; }
+.flex2 { width: 50%; }
+
+/*********************************************NY Times*/
+
+#nytimes-header, #wikipedia-header, #temperature, #submit-btn {
+  cursor: pointer;
+  cursor: hand;
+}
+
+.article-list {
+  margin: 0;
+  padding: 0;
+  overflow: auto;
+  height: 440px;
+}
+
+.article, .wikiLinks {
+  list-style-type: none;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.article a {
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.article p { margin-top: 5px; }
+
+/*********************************************Weather*/
+
+.flex-weather, .flex-wiki {
+  margin: 0;
+  margin-bottom: 10px;
+  height: 200px;
+  background-color: rgba(255, 255, 255, 0.7);
+  box-shadow: rgba(0, 0, 0, .5);
+}
+
+.flex-wiki { height: 290px;}
+
+#current {
+  width: 80%;
+  height: 110px;
+  text-align: center;
+  position: relative;
+  margin: 0 auto;
+  padding: 0px;
+}
+
+#current a { text-decoration: none; }
+
+#weatherImage {
+  background-color: aqua;
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  position: absolute;
+  top: -10px;
+  right: -25px;
+}
+
+#temperature:hover { font-weight: bold; }
+
+/*********************************************WIKI*/
+
+#wikipedia-container ul {
+  overflow: auto;
+  height: 225px;
+  padding: 0px;
+}
+
+/*********************************************Overflow scrollbar*/
+::-webkit-scrollbar {
+  background: transparent;
+  width: 5px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-thumb { background-color: #4973AB; }
+
+/*********************************************Screen size < 1024*/
+
+@media only screen
+and (max-width: 1024px)
+
+{
+  input {
+    width: 50%;
+    display: block;
+    margin: 0 auto;
+  }
+  #submit-btn {
+    margin: 0 auto;
+    margin-top: 10px;
+    width: 50%;
+  }
+  .flex-container {
+    -webkit-display: -webkit-box;
+    -webkit-display: -webkit-flex;
+    -moz-display: flex;
+    -ms-display: -ms-flexbox;
+    -o-display: flex;
+    display: -webkit-box;
+    display: flex;
+    -webkit-flex-flow: column;
+    -ms-flex-flow: column;
+    flex-flow: column;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    /*centers all the boxes*/
+    height: 100%;
+  }
+  .flex1,
+  .flex2,
+  .flex3 {
+    width: 95%;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 10px;
+  }
+  .flex1:nth-of-type(1) {
+    -webkit-box-ordinal-group: 3;
+    -webkit-order: 2;
+    -ms-flex-order: 2;
+    order: 2;
+  }
+  .flex2:nth-of-type(2) {
+    -webkit-box-ordinal-group: 4;
+    -webkit-order: 3;
+    -ms-flex-order: 3;
+    order: 3;
+  }
+  .flex3:nth-of-type(3) {
+    -webkit-box-ordinal-group: 2;
+    -webkit-order: 1;
+    -ms-flex-order: 1;
+    order: 1;
+    margin-top: 10px;
+  }
+}
