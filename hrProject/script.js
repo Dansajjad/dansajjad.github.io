@@ -57,7 +57,7 @@ function loadData() {
 
 
 //NY TIMES API
-  var nytBaseUrl = "http://api.nytimes.com/svc/search/v2/articlesearch.";
+  var nytBaseUrl = "api.nytimes.com/svc/search/v2/articlesearch.";
   var nytKey = "3136f9972bccd4c4b9d44a097076c8ec:10:73707263";
   var nytUrl = nytBaseUrl + "json?q=" + city + "&sort=newest&api-key=" + nytKey;
 
@@ -91,12 +91,13 @@ function loadData() {
 
 //Open Weather API
   var weatherKey = "cd4e967341807b3b328f26d3247e06ca";
-  var weatherUrl = "http://api.openweathermap.org/data/2.5/weather?q=" + address + "&appid=cd4e967341807b3b328f26d3247e06ca" + "&units=imperial" + "&format=json";
+  //removed http://
+  var weatherUrl = "api.openweathermap.org/data/2.5/weather?q=" + address + "&appid=cd4e967341807b3b328f26d3247e06ca" + "&units=imperial" + "&format=json";
 
   fetchAjaxData(weatherUrl, weatherDataHandler);
 
 //Wikipedia API
-  var wikiBaseUrl = "https://en.wikipedia.org/w/api.php?action=query&list=search&format=json&srsearch=";
+  var wikiBaseUrl = "en.wikipedia.org/w/api.php?action=query&list=search&format=json&srsearch="; //removed https://
   var wikiUrl = "";
 
   if (city) {
