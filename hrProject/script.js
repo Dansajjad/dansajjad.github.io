@@ -91,7 +91,7 @@ function loadData() {
 
 //Open Weather API
   var weatherKey = "cd4e967341807b3b328f26d3247e06ca";
-  var weatherUrl = "https://api.openweathermap.org/data/2.5/weather?q=" + address + "&appid=cd4e967341807b3b328f26d3247e06ca" + "&units=imperial" + "&format=json";
+  var weatherUrl = "http://api.openweathermap.org/data/2.5/weather?q=" + address + "&appid=cd4e967341807b3b328f26d3247e06ca" + "&units=imperial" + "&format=json";
 
   fetchAjaxData(weatherUrl, weatherDataHandler);
 
