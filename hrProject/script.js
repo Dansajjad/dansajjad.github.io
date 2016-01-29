@@ -58,7 +58,7 @@ function loadData() {
 
 
 //NY TIMES API
-  var nytBaseUrl = "http://api.nytimes.com/svc/search/v2/articlesearch.";
+  var nytBaseUrl = "https://api.nytimes.com/svc/search/v2/articlesearch.";
   var nytKey = "3136f9972bccd4c4b9d44a097076c8ec:10:73707263";
   var nytUrl = nytBaseUrl + "json?q=" + city + "&sort=newest&api-key=" + nytKey;
 
