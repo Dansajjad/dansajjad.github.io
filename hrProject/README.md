@@ -1,5 +1,4 @@
-This is a project for hackreactor. 
-The main purpose of this web application is to display information given a location, which the user input. 
+The web application displays information about a location that the user inputs.  It is built keeping handheld devices in mind.  Information includes news stories that contain the city name, wikipedia articles about the location, current weather with Fahrenheit/Celsius conversion, map of the location, and a Google streetview image. 
 
 The web app has been built in vanilla JavaScript. It uses the following APIs: 
 -Google StreetView
