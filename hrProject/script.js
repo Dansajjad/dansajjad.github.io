@@ -24,9 +24,10 @@ function loadData() {
   content.setAttribute("class", "dataEntered flex-container");
 
 //form data
-  var street = document.querySelector("#street").value;
-  var city = document.querySelector("#city").value;
-  var state = document.querySelector("#state").value;
+  var street = (document.querySelector("#street").value).trim();
+  var city = (document.querySelector("#city").value).trim();
+  console.log(city.length);
+  var state = (document.querySelector("#state").value).trim();
 
   if (street === "") {
     address = city + " " + state;
