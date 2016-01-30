@@ -55,9 +55,10 @@ input[type="text"].focus {
 }
 
 h3 {
+  position: relative;
   text-align: center;
-  color: #000;
-  background-color: rgba(227, 227, 227, 1);
+  color: #FFF;
+  background-color: rgba(0, 0, 0, 1);
   margin-top: 0;
   padding-top: .5em;
   padding-bottom: .5em;
@@ -78,7 +79,8 @@ h3 {
   height: 650px;
   background-size: cover;
 }
-
+svg { position: absolute; fill: white;  height: 20px;  right: 1em; transform: rotateX(180deg); transition: transform .35s ease-in-out;}
+.collapsed { transform: rotate(0); fill:red; }
 .dataEntered.flex-container {
   visibility: visible;
   opacity: 1;
@@ -159,7 +161,9 @@ h3 {
 }
 
 #temperature:hover { font-weight: bold; }
-
+#temperature strong {
+  font-size: 2em;
+}
 /*********************************************WIKI*/
 
 #wikipedia-container ul {
@@ -238,4 +242,6 @@ and (max-width: 1024px)
     order: 1;
     margin-top: 10px;
   }
+  svg { position: absolute; fill: white;  height: 20px;  right: 1em; transform: rotateX(180deg); transition: transform .35s ease-in-out;}
+.collapsed { transform: rotate(0); fill:red; }
 }

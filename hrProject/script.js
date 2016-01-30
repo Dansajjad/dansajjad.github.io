@@ -26,7 +26,6 @@ function loadData() {
 //form data
   var street = (document.querySelector("#street").value).trim();
   var city = (document.querySelector("#city").value).trim();
-  console.log(city.length);
   var state = (document.querySelector("#state").value).trim();
 
   if (street === "") {
@@ -114,7 +113,6 @@ function loadData() {
 } //loadData
 
 var submitButton = document.getElementById("submit-btn");
-console.log(submitButton);
 submitButton.addEventListener("click", loadOnSubmit);
 
 //Toggle display of NYT & Wiki flex boxes
