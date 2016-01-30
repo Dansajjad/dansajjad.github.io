@@ -17,18 +17,23 @@ body {
   background-color: #fff;
 }
 
-h1 {letter-spacing: 0.02em;}
+h1 {
+  letter-spacing: 0.02em;
+}
 
 label {
   margin: 0 10px;
   font-style: italic;
 }
+
 input[type="text"] {
   font-size: 20px;
   padding: 10px;
   border: solid 5px #c9c9c9;
+  -webkit-transition: border 0.5s;
   transition: border 0.5s;
 }
+
 input[type="text"]:focus,
 input[type="text"].focus {
   border: solid 5px #969696;
@@ -79,14 +84,34 @@ h3 {
   height: 650px;
   background-size: cover;
 }
-svg { position: absolute; fill: white;  height: 20px;  right: 1em; transform: rotateX(180deg); transition: transform .35s ease-in-out;}
-.collapsed { transform: rotate(0); fill:red; }
+
+svg {
+  position: absolute;
+  fill: white;
+  height: 20px;
+  right: 1em;
+  -webkit-transform: rotateX(180deg);
+  transform: rotateX(180deg);
+  -webkit-transition: -webkit-transform .35s ease-in-out;
+  transition: -webkit-transform .35s ease-in-out;
+  transition: transform .35s ease-in-out;
+  transition: transform .35s ease-in-out, -webkit-transform .35s ease-in-out;
+}
+
+.collapsed {
+  -webkit-transform: rotate(0);
+  transform: rotate(0);
+  fill: red;
+}
+
 .dataEntered.flex-container {
   visibility: visible;
   opacity: 1;
 }
 
-.flex1, .flex2, .flex3 {
+.flex1,
+.flex2,
+.flex3 {
   height: 500px;
   box-shadow: rgba(0, 0, 0, .5);
   margin-top: 10px;
@@ -95,14 +120,26 @@ svg { position: absolute; fill: white;  height: 20px;  right: 1em; transform: ro
   background-color: rgba(255, 255, 255, 0.7);
 }
 
-.flex3 { background-color: rgba(0, 0, 0, 0); }
+.flex3 {
+  background-color: rgba(0, 0, 0, 0);
+}
 
-.flex1, .flex3 { width: 30%; }
-.flex2 { width: 50%; }
+.flex1,
+.flex3 {
+  width: 30%;
+}
+
+.flex2 {
+  width: 50%;
+}
+
 
 /*********************************************NY Times*/
 
-#nytimes-header, #wikipedia-header, #temperature, #submit-btn {
+#nytimes-header,
+#wikipedia-header,
+#temperature,
+#submit-btn {
   cursor: pointer;
   cursor: hand;
 }
@@ -114,7 +151,8 @@ svg { position: absolute; fill: white;  height: 20px;  right: 1em; transform: ro
   height: 440px;
 }
 
-.article, .wikiLinks {
+.article,
+.wikiLinks {
   list-style-type: none;
   margin-left: 10px;
   margin-right: 10px;
@@ -125,11 +163,15 @@ svg { position: absolute; fill: white;  height: 20px;  right: 1em; transform: ro
   text-decoration: none;
 }
 
-.article p { margin-top: 5px; }
+.article p {
+  margin-top: 5px;
+}
+
 
 /*********************************************Weather*/
 
-.flex-weather, .flex-wiki {
+.flex-weather,
+.flex-wiki {
   margin: 0;
   margin-bottom: 10px;
   height: 200px;
@@ -137,7 +179,9 @@ svg { position: absolute; fill: white;  height: 20px;  right: 1em; transform: ro
   box-shadow: rgba(0, 0, 0, .5);
 }
 
-.flex-wiki { height: 290px;}
+.flex-wiki {
+  height: 290px;
+}
 
 #current {
   width: 80%;
@@ -148,7 +192,9 @@ svg { position: absolute; fill: white;  height: 20px;  right: 1em; transform: ro
   padding: 0px;
 }
 
-#current a { text-decoration: none; }
+#current a {
+  text-decoration: none;
+}
 
 #weatherImage {
   background-color: aqua;
@@ -160,10 +206,15 @@ svg { position: absolute; fill: white;  height: 20px;  right: 1em; transform: ro
   right: -25px;
 }
 
-#temperature:hover { font-weight: bold; }
+#temperature:hover {
+  font-weight: bold;
+}
+
 #temperature strong {
   font-size: 2em;
 }
+
+
 /*********************************************WIKI*/
 
 #wikipedia-container ul {
@@ -172,21 +223,23 @@ svg { position: absolute; fill: white;  height: 20px;  right: 1em; transform: ro
   padding: 0px;
 }
 
+
 /*********************************************Overflow scrollbar*/
+
 ::-webkit-scrollbar {
   background: transparent;
   width: 5px;
   height: 10px;
 }
 
-::-webkit-scrollbar-thumb { background-color: #4973AB; }
+::-webkit-scrollbar-thumb {
+  background-color: #4973AB;
+}
+
 
 /*********************************************Screen size < 1024*/
 
-@media only screen
-and (max-width: 1024px)
-
-{
+@media only screen and (max-width: 1024px) {
   input {
     width: 50%;
     display: block;
@@ -242,6 +295,21 @@ and (max-width: 1024px)
     order: 1;
     margin-top: 10px;
   }
-  svg { position: absolute; fill: white;  height: 20px;  right: 1em; transform: rotateX(180deg); transition: transform .35s ease-in-out;}
-.collapsed { transform: rotate(0); fill:red; }
+  svg {
+    position: absolute;
+    fill: white;
+    height: 20px;
+    right: 1em;
+    -webkit-transform: rotateX(180deg);
+    transform: rotateX(180deg);
+    -webkit-transition: -webkit-transform .35s ease-in-out;
+    transition: -webkit-transform .35s ease-in-out;
+    transition: transform .35s ease-in-out;
+    transition: transform .35s ease-in-out, -webkit-transform .35s ease-in-out;
+  }
+  .collapsed {
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+    fill: red;
+  }
 }
