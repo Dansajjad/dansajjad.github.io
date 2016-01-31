@@ -1,3 +1,7 @@
+"use strict";
+/*jslint browser:true */
+/*global console, alert, google, ActiveXObject*/
+
 var address = "";
 
 //load google maps script
@@ -110,13 +114,12 @@ function loadData() {
 var submitButton = document.getElementById("submit-btn");
 submitButton.addEventListener("click", loadOnSubmit);
 
-
-//click toggle event for the chevron arrow 
+//click toggle event for the chevron arrow
 window.onload = function() {
-var svgs = document.getElementsByTagName('svg');
+  var svgs = document.getElementsByTagName('svg');
   Array.prototype.forEach.call(svgs, function(svg) {
     svg.parentNode.parentNode.addEventListener("click", function() {
-        svg.classList.toggle('collapsed');
+      svg.classList.toggle('collapsed');
     });
   });
 };
