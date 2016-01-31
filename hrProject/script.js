@@ -110,6 +110,17 @@ function loadData() {
 var submitButton = document.getElementById("submit-btn");
 submitButton.addEventListener("click", loadOnSubmit);
 
+
+//click toggle event for the chevron arrow 
+window.onload = function() {
+var svgs = document.getElementsByTagName('svg');
+  Array.prototype.forEach.call(svgs, function(svg) {
+    svg.parentNode.parentNode.addEventListener("click", function() {
+        svg.classList.toggle('collapsed');
+    });
+  });
+};
+
 //Toggle display of NYT & Wiki flex boxes
 // grab div
 var nytimesHeader = document.getElementById('nytimes-header');
@@ -185,7 +196,7 @@ function weatherDataHandler(info) {
 
     if (elType === "p") {
       element.setAttribute("id", elName.toLowerCase());
-      element.innerHTML = "<em>" + elName + "</em> :  " + "<strong>" + elValue + "</strong>" + elUnits;
+      element.innerHTML = "<em>" + elName + "</em> :  " + "<strong>" + elValue + "</strong>" + "<span class='units'>" + elUnits + "</span>";
     } //para
     else if (elType === "img") {
       var imageSource = "http://openweathermap.org/img/w/" + weatherImage + ".png";
@@ -208,10 +219,10 @@ function weatherDataHandler(info) {
     if (currentUnit == "f") {
       var celsius = (temperature - 32) / 1.8;
 
-      el.innerHTML = "<em> Temperature </em> :  <strong>" + celsius.toFixed(1) + "</strong> &#8451;";
+      el.innerHTML = "<em> Temperature </em> :  <strong>" + celsius.toFixed(1) + "</strong>" + "<span class='units'>" + " &#8451;" + "</span>";
       currentUnit = "c";
     } else {
-      el.innerHTML = "<em> Temperature </em> :  <strong>" + temperature + "</strong> &#8457;";
+      el.innerHTML = "<em> Temperature </em> :  <strong>" + temperature + "</strong>" + "<span class='units'>" + " &#8457;" + "</span>";
       currentUnit = "f";
     }
   } //toggleTemp F to C

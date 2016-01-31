@@ -214,6 +214,10 @@ svg {
   font-size: 2em;
 }
 
+/*Change color of the F/C unit*/
+#current #temperature :last-child { 
+  color: blue;
+}
 
 /*********************************************WIKI*/
 
