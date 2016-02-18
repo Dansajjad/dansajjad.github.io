@@ -1,0 +1,72 @@
+/** { border: 1px solid black; }*/
+
+body {
+  margin: 0 auto;
+  width: 60%;
+  font-family: Helvetica;
+  background: #91877b;
+}
+header {
+  text-align: center;
+  padding-bottom: 30px;
+}
+header #message {
+  width: 70%;
+}
+
+h2 {
+letter-spacing: 2px;
+text-transform: uppercase;
+text-align: center;
+font: bold 30px Sans-Serif;
+padding: 20px 0;
+
+text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+input[type="text"] {
+  font-size: 20px;
+  padding: 10px;
+  border: solid 5px #c9c9c9;
+  transition: border 0.5s;
+}
+input[type="text"]:focus,
+input[type="text"].focus {
+  border: solid 5px #969696;
+}
+
+#send {
+  font-size: 20px;
+  font-weight: bold;
+  color: #fff;
+  border-radius: 5px;
+  border: 1px solid transparent;
+  background-color: rgba(66, 139, 202, 1);
+  padding: 15px 10px;
+  margin-left: 10px;
+}
+
+#messages li {
+  list-style: none;
+  background-color: lightblue;
+  margin: 5px 0px;
+  padding: 5px 0px;
+  /*border: 1px solid black;*/
+  border-radius: 10px;
+  -webkit-box-shadow: 7px 7px 5px -4px rgba(0,0,0,0.27);
+  -moz-box-shadow: 7px 7px 5px -4px rgba(0,0,0,0.27);
+  box-shadow: 7px 7px 5px -4px rgba(0,0,0,0.27);
+}
+#messages li div {
+  display: inline-block;
+  margin: 0px 5px;
+}
+.username {
+  font-weight: bold; color: rgba(0,0,0,0.75);
+}
+.message {
+  margin-left: 50px;
+}
+.time {
+  color: rgba(255,255,255, 0.9);
+  font-size: 13px;
+}

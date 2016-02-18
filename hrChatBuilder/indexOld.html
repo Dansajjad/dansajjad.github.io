@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Chatbuilder</title>
+    <script src="http://chatbuilder.hackreactor.com/ChatBuilder.js"></script>
+    <style media="screen">
+      /** { border: 1px solid black; }*/
+      body {
+        margin: 0 auto;
+        width: 60%;
+      }
+      header { text-align: center;}
+      #messages li {
+        list-style: none;
+        background-color: lightblue;
+        margin: 5px 0px;
+        padding: 5px 0px;
+        /*border: 1px solid black;*/
+        border-radius: 10px;
+      }
+      #messages li div {
+        display: inline-block;
+        margin: 0px 5px;
+      }
+      .username {font-weight: bold;}
+      .message {
+        margin-left: 50px;
+      }
+      .time {
+        color: rgba(255,255,255, 0.9);
+        font-size: 13px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h2>Welcome to My Chat Room</h2>
+      <input id="message" class="draft" type="text"/> <button id="send" class="send" >Send</button>
+    </header>
+
+
+    <ul id="messages" class="messages">
+    </ul>
+<script>
+    delete Chat.display;
+    delete Chat.fetch;
+    delete Chat.send;
+//fetching the chats
+//var chatApiUrl = "https://api.parse.com/1/classes/chats?order=-createdAt";
+var chatApiUrl = "https://api.parse.com/1/classes/chats?order=createdAt";
+
+function fetchAjaxData(url, cb) {
+  var xhr;
+
+  if(window.XMLHttpRequest) { xhr = new XMLHttpRequest(); }
+  else { xhr = new ActiveXObject("Microsoft.XMLHTTP"); }
+
+  xhr.open("GET", url);
+  xhr.setRequestHeader("X-Parse-Application-Id", "voLazbq9nXuZuos9hsmprUz7JwM2N0asnPnUcI7r");
+  xhr.setRequestHeader("X-Parse-REST-API-Key", "QC2F43aSAghM97XidJw8Qiy1NXlpL5LR45rhAVAf");
+
+
+  xhr.onreadystatechange = function() {
+    if(xhr.readyState === 4 && xhr.status === 200) {
+      var data = JSON.parse(xhr.responseText);
+      console.log(data);
+      if(cb) { cb(data); }
+    }
+
+    else { console.log("Could not complete request"); }
+  };
+
+  xhr.send();
+}
+
+console.log(fetchAjaxData(chatApiUrl, chatDataHandler));
+
+function chatDataHandler(data) {
+  console.log(data);
+  var html = "";
+  data.results.forEach(function(el) {
+    html +=
+      '<li><div class="username"><span>' + el.username + '>></span></div>' +
+      '<div class="message"><span>' + el.text + '</span></div>' +
+      '<div class="time"><span>' + formatTime(el.updatedAt) + '</span></div></li>';
+  });
+  var list = document.getElementById('messages');
+  list.innerHTML = html;
+}
+function formatTime(str) {
+
+  var parsed = new Date(str);
+  return zeroPad(parsed.getHours()) + ":" + zeroPad(parsed.getMinutes());
+}
+function zeroPad(num) {
+  while(String(num).length < 2) { num = "0" + String(num); }
+  return num;
+}
+
+// function sendAjaxData(url, data) {
+//   var xhr;
+//
+//   if(window.XMLHttpRequest) { xhr = new XMLHttpRequest(); }
+//   else { xhr = new ActiveXObject("Microsoft.XMLHTTP"); }
+//
+//   xhr.open("POST", url);
+//   xhr.setRequestHeader("X-Parse-Application-Id", "voLazbq9nXuZuos9hsmprUz7JwM2N0asnPnUcI7r");
+//   xhr.setRequestHeader("X-Parse-REST-API-Key", "QC2F43aSAghM97XidJw8Qiy1NXlpL5LR45rhAVAf");
+//
+//
+//   xhr.onreadystatechange = function() {
+//     if(xhr.readyState === 4 && xhr.status === 200) {
+//       var data = JSON.parse(xhr.responseText);
+//       console.log(data);
+//     }
+//     else { console.log("Could not complete request"); }
+//   };
+//
+//   xhr.send(data);
+// }
+var postUrl = "https://api.parse.com/1/classes/chats";
+
+var submitButton = document.getElementById("send");
+submitButton.addEventListener("click", function() {
+  var message = document.getElementById("message").value;
+  console.log(message)
+  sendAjaxData(postUrl, message);
+  fetchAjaxData(chatApiUrl, chatDataHandler)
+});
+
+
+
+
+
+function sendAjaxData(url, text){
+  var r = new XMLHttpRequest();
+  r.open("POST", url, true);
+  r.setRequestHeader("X-Parse-Application-Id", "voLazbq9nXuZuos9hsmprUz7JwM2N0asnPnUcI7r");
+  r.setRequestHeader("X-Parse-REST-API-Key", "QC2F43aSAghM97XidJw8Qiy1NXlpL5LR45rhAVAf");
+  r.onreadystatechange = function () {
+    if (r.readyState != 4 || r.status != 200) return;
+    console.log("Success: " + r.responseText);
+  };
+  r.send(JSON.stringify({username: Chat.username, "text": text}));
+}
+// console.log(sendAjaxData("https://api.parse.com/1/classes/chats", "Howdy partner"));
+
+  setInterval(function() {
+    fetchAjaxData(chatApiUrl, chatDataHandler)
+  }, 3000);
+
+// sendAjaxData(postUrl, "Holllaa");
+</script>
+
+  </body>
+</html>
+
+
+
+<script type="text/javascript">
+//
+// var submitButton = document.getElementById("send");
+// submitButton.addEventListener("click", function() {
+//   var message = document.getElementById("message").value;
+//   console.log(message)
+//   Chat.send(message);
+// })
+//
+// function display(str) {
+//   var list = document.getElementById("messages");
+//   var message = document.createElement("li");
+//   message.textContent = str;
+//   list.appendChild(message);
+// }
+//
+// function fetch() {
+//   $.getJSON("https://api.parse.com/1/classes/chats", display(str);
+// }
+//
+// function send(str) {
+//   $.post("https://api.parse.com/1/classes/chats", str);
+// }
+//
+//   // Chat.guide.start();
+//   // // Chat.display();
+//   // // Chat.fetch();
+//   // Your JavaScript code will go right here!
+//
+//   setInterval(function() {
+//     // $.getJson(Chat.fetch(Chat.display));
+//     // Chat.fetch(display);
+//     fetch(display);
+//   }, 3000)
+
+</script>
