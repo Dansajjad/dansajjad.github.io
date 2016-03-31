@@ -1,0 +1,44 @@
+[
+  {
+    "name": "Bugs Bunny",
+    "shortname": "bugs",
+    "reknown": "Looney Tunes",
+		"pic_url": "http://www.tiptopsigns.com/images/T/cartoon_bugsbunny_150tn.jpg",
+    "bio": "&quot;What's up, doc?&quot; Bugs Bunny is, perhaps, the most recognizable and famous cartoon character. Looney Tunes were first created as lead-ins to feature films. Bugs first appeared as a n-name rabbit in 1938 in &quot;Porky's Hare Hunt.&quot; Tex Avery later named him Bugs Bunny after the infamous West Coast mobster. Decades later, Looney Tunes cartoons became a Saturday morning staple. Bugs Bunny is still tops."
+  },
+  {
+    "name": "Homer Simpson",
+    "shortname": "homer",
+    "reknown":"The Simpsons",
+		"pic_url": "https://s3.amazonaws.com/rapgenius/Homer_Simpson.jpg",
+    "bio": "Homer Simpson is known throughout the world. Having been on TV for over 20 seasons, this patriarch is not the father who knows best, but he certainly tries. Homer Simpson is based on creator Matt Groening's father, who is also named Homer. And if you look at Homer's profile, a bit of his hair and his ear form the initials &quot;M G.&quot;"
+  },
+  {
+    "name": "Mickey Mouse",
+    "shortname": "mickey",
+    "reknown": "Disney",
+		"pic_url": "http://www.clipartbest.com/cliparts/ncX/prb/ncXprbocB.jpeg",
+    "bio": "Mickey Mouse represents Disney in all its forms. He started life in black and white in 1928's Steamboat Willie, the first synchronized sound cartoon. Mickey Mouse was first voiced by Walt Disney, himself, then later by Jim MacDonald and Wayne Allwine. Mickey Mouse isn't just a cartoon character; he's an icon."
+  },
+  {
+    "name": "Wile E. Coyote",
+    "shortname": "wile",
+    "reknown": "Road Runner",
+		"pic_url": "https://s-media-cache-ak0.pinimg.com/236x/92/50/64/92506458ae2707cc65d088aa3d6ede7f.jpg",
+    "bio": "Poor Wile E. Coyote. We don't want him to catch the Road Runner, but we sure feel bad for him. Director Chuck Jones created the tenacious coyote along with Michael Maltese. The Road Runner and Wile E. Coyote were introduced in 1948's Fast and Furry-Ous."
+  },
+  {
+    "name": "Eric Cartman",
+    "shortname": "eric",
+    "reknown": "South Park",
+		"pic_url": "http://cdn.speckyboy.com/wp-content/uploads/2008/06/cartman.png",
+    "bio": "Eric Cartman is usually the villain on South Park. Since 1997, creators Trey Parker and Matt Stone have had Cartman abducted by aliens, sent to fat camp, imagining he's dead and owning an amusement park. His unemotional, pragmatic view toward his achieving his goals has resulted in many dire circumstances, as well as catch phrases, like, &quot;Screw you guys. I'm going home.&quot;"
+  },
+  {
+    "name": "Peter Griffin",
+    "shortname": "peter",
+    "reknown": "Family Guy",
+		"pic_url": "https://pbs.twimg.com/profile_images/1119269505/0509071614Peter_Griffin.jpg",
+    "bio": "Toy maker at Happy-Go-Lucky Toys. His boss is Mr. Weed. Temporarily became president of the company when a tobacco conglomerate bought the toy company. Peter was also briefly a fisherman and a jouster when Mr. Weed died and Happy-Go-Lucky Toys closed. He was also dictator of Peteroria for a short time."
+  }
+]
